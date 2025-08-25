@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hardik • Work-Life Balance Toolkit</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <meta name="color-scheme" content="dark light">
+</head>
+<body>
+  <!-- HEADER / HERO -->
+  <header class="hero" role="banner">
+    <div class="hero-inner">
+      <h1 class="title">Work-Life Balance Toolkit</h1>
+      <p class="subtitle">Gothic-minimal toolkit: planner, focus timer, micro-habits. Built with HTML/CSS/vanilla JS — local-first.</p>
+      <div class="cta-row">
+        <a class="btn" href="#planner">Open Planner</a>
+        <a class="btn outline" href="#timer">Start Focus Timer</a>
+        <a class="btn outline" href="#habits">Mark Habits</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- PLANNER -->
+    <section id="planner" class="card" aria-labelledby="planner-title">
+      <h2 id="planner-title">Balance Meter + Weekly Planner</h2>
+
+      <div class="two-col">
+        <div class="meter-card">
+          <div class="gauge" id="gauge" aria-hidden="true"><div class="gauge-inner"><span id="score">0</span></div></div>
+          <div class="sliders">
+            <label>Work <input id="work" type="range" min="0" max="100" value="40"></label>
+            <label>Study <input id="study" type="range" min="0" max="100" value="10"></label>
+            <label>Health <input id="health" type="range" min="0" max="100" value="25"></label>
+            <label>Fun <input id="fun" type="range" min="0" max="100" value="25"></label>
+          </div>
+          <p class="hint">Aim for a balanced spread — the score shows how balanced your week looks.</p>
+        </div>
+
+        <div class="planner-card">
+          <div class="planner-controls">
+            <button id="clear-planner" class="btn small danger">Clear Week</button>
+            <button id="export-planner" class="btn small">Export JSON</button>
+          </div>
+          <div id="planner-grid" class="planner-grid" role="table" aria-label="Weekly planner"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMER -->
+    <section id="timer" class="card" aria-labelledby="timer-title">
+      <h2 id="timer-title">Focus Timer</h2>
+
+      <div class="two-col">
+        <div class="timer-card">
+          <div class="ring" id="ring" aria-live="polite"><span id="time-display">25:00</span></div>
+          <div class="timer-controls">
+            <button id="start-timer" class="btn">Start</button>
+            <button id="pause-timer" class="btn outline">Pause</button>
+            <button id="reset-timer" class="btn outline">Reset</button>
+          </div>
+        </div>
+
+        <div class="timer-settings">
+          <label>Work (min) <input id="work-min" type="number" min="1" max="180" value="25"></label>
+          <label>Break (min) <input id="break-min" type="number" min="1" max="60" value="5"></label>
+          <label>Cycles <input id="cycles" type="number" min="1" max="12" value="4"></label>
+          <p class="hint">Timer auto switches between work & break. A chime plays on transitions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABITS -->
+    <section id="habits" class="card" aria-labelledby="habits-title">
+      <h2 id="habits-title">Micro-Habits • Mood • Zen Koan</h2>
+
+      <div class="two-col">
+        <div class="habits-card">
+          <ul id="habit-list" class="habit-list" aria-label="Daily micro habits">
+            <!-- items populated by JS -->
+          </ul>
+          <div class="bar"><div id="habit-progress"></div></div>
+          <div class="habit-actions">
+            <button id="reset-habits" class="btn small">Reset Today</button>
+          </div>
+        </div>
+
+        <div class="mood-card">
+          <h3>Mood</h3>
+          <input id="mood-range" type="range" min="-2" max="2" value="0" />
+          <div id="mood-emoji" class="emoji" aria-live="polite">😐</div>
+
+          <h3>Zen Koan</h3>
+          <blockquote id="koan" class="koan">Loading…</blockquote>
+          <div class="koan-actions">
+            <button id="new-koan" class="btn small">New Koan</button>
+            <button id="share-koan" class="btn small outline">Copy Koan</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Built by <strong>Hardik Hariyani</strong> • <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">GitHub</a> • <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener">LinkedIn</a></p>
+    <p><small>Resume → <a href="resume.pdf" target="_blank">Download</a></small></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+</body>
+</html>

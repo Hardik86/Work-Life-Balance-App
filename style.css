@@ -1,0 +1,77 @@
+:root{
+  --bg:#07070a; --surface:#0f0f13; --muted:#16161c; --ink:#e9e9ea;
+  --accent:#8a2be2; --accent-2:#c0123c; --good:#28c76f; --ring:#2b2b34;
+  --card-radius:18px;
+  font-synthesis: none;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 600px at 70% 10%, #0b0b0f 0%, var(--bg) 55%);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* HERO */
+.hero{padding:56px 20px;text-align:center}
+.hero-inner{max-width:980px;margin:auto;background:linear-gradient(135deg, rgba(138,43,226,.06), rgba(192,18,60,.04));padding:36px;border-radius:20px;border:1px solid rgba(255,255,255,.03)}
+.title{font-family:Cinzel, serif;font-size:2.2rem;margin:0 0 8px;text-shadow:0 6px 24px rgba(138,43,226,.15)}
+.subtitle{margin:0 0 16px;opacity:.85}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.btn{background:linear-gradient(135deg,var(--accent),#6f1ec9);border:0;color:white;padding:10px 16px;border-radius:12px;text-decoration:none;display:inline-block;font-weight:600;cursor:pointer}
+.btn.outline{background:transparent;border:1px solid rgba(255,255,255,.06)}
+.btn.small{padding:8px 10px;font-size:.95rem;border-radius:10px}
+.btn.danger{background:linear-gradient(135deg,var(--accent-2),#7f0a22)}
+
+.card{max-width:1100px;margin:28px auto;padding:22px;border-radius:var(--card-radius);background:linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,.00));border:1px solid rgba(255,255,255,.03)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+@media (max-width:860px){ .two-col{grid-template-columns:1fr} }
+
+/* METER */
+.meter-card{padding:8px}
+.gauge{width:170px;height:170px;margin:6px auto;border-radius:50%;background:conic-gradient(var(--good) calc(var(--gval,0) * 1%), var(--ring) 0);display:grid;place-items:center;position:relative;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+.gauge-inner{width:140px;height:140px;border-radius:50%;background:var(--surface);display:grid;place-items:center}
+#gauge { --gval:50; }
+#gauge #score{font-family:Cinzel,serif;font-size:34px}
+
+/* Sliders */
+.sliders{max-width:420px;margin:10px auto;display:grid;gap:10px}
+.sliders label{display:flex;justify-content:space-between;align-items:center;gap:12px}
+input[type="range"]{width:60%;accent-color:var(--accent)}
+
+/* PLANNER GRID */
+.planner-grid{display:grid;grid-template-columns:100px repeat(7,1fr);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.03)}
+.planner-grid .head{background:#0e0e12;padding:10px;text-align:center;font-weight:600;border-right:1px solid rgba(255,255,255,.02)}
+.planner-grid .timecell{background:#0e0e12;padding:10px;border-right:1px solid rgba(255,255,255,.02);font-weight:600}
+.planner-grid .cell{min-height:84px;padding:10px;background:var(--muted);border-right:1px solid rgba(255,255,255,.02);border-bottom:1px solid rgba(255,255,255,.02);outline:none}
+.planner-controls{display:flex;gap:10px;justify-content:flex-end;margin-bottom:12px}
+
+/* TIMER */
+.ring{--p:0;width:220px;height:220px;border-radius:50%;margin:8px auto;background:conic-gradient(var(--accent) calc(var(--p) * 1%), var(--ring) 0);display:grid;place-items:center;position:relative}
+.ring::after{content:"";position:absolute;inset:12px;border-radius:50%;background:var(--surface)}
+#time-display{font-family:Cinzel,serif;font-size:40px;color:var(--ink)}
+.timer-card{padding:8px}
+.timer-settings label{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+
+/* HABITS */
+.habits-card{padding:8px}
+.habit-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.habit-list li{background:#121217;border-radius:10px;padding:10px;border:1px solid rgba(255,255,255,.02);display:flex;align-items:center;justify-content:space-between}
+.bar{height:12px;background:#1e1e2a;border-radius:999px;overflow:hidden;margin-top:12px;border:1px solid rgba(255,255,255,.03)}
+#habit-progress{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+
+/* MOOD / KOAN */
+.mood-card{padding:8px;text-align:left}
+.emoji{font-size:28px;margin:8px 0}
+.koan{background:#101015;padding:12px;border-left:4px solid var(--accent);border-radius:10px;min-height:56px}
+.koan-actions{display:flex;gap:8px;margin-top:8px}
+
+/* FOOTER */
+.site-footer{text-align:center;padding:18px;margin-top:20px;color:rgba(255,255,255,.7);border-top:1px solid rgba(255,255,255,.02)}
+
+/* small niceties */
+.hint{opacity:.8;font-size:.95rem;margin-top:8px}
